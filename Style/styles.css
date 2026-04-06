@@ -829,42 +829,142 @@ ul { list-style: none; }
 /* =============================================
    PRESENCE
    ============================================= */
+/* =============================================
+   PRESENCE SECTION FINAL (PIXEL PERFECT)
+   ============================================= */
+
+.presence {
+  padding: 110px 0;
+  background: #f8fafc;
+}
+
+/* GRID */
+.presence__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* =============================================
+   MAPA (ARMADO CON 4 IMÁGENES)
+   ============================================= */
 .presence__map {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 480px;
+  height: 480px;
 }
 
-/* TODAS LAS IMÁGENES ENCIMADAS */
+/* IMÁGENES BASE */
 .map-state {
   position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-  transition: .3s ease;
+  width: 260px; /* 🔥 tamaño individual */
+  height: auto;
+
+  opacity: 0.25;
+  transition: all .3s ease;
 }
 
-/* ESTADO ACTIVO */
+/* =============================================
+   POSICIÓN EXACTA DE CADA ESTADO
+   ============================================= */
+
+/* COAHUILA (arriba centro) */
+.map-state[data-state="coahuila"] {
+  top: 0;
+  left: 100px;
+}
+
+/* DURANGO (izquierda) */
+.map-state[data-state="durango"] {
+  top: 140px;
+  left: 0;
+}
+
+/* NUEVO LEÓN (derecha) */
+.map-state[data-state="nuevoleon"] {
+  top: 140px;
+  left: 200px;
+}
+
+/* ZACATECAS (abajo) */
+.map-state[data-state="zacatecas"] {
+  top: 270px;
+  left: 110px;
+}
+
+/* ACTIVO */
 .map-state.active {
   opacity: 1;
   z-index: 2;
 }
 
-/* LISTA (igual que antes) */
+/* =============================================
+   CONTENIDO DERECHO
+   ============================================= */
+.presence__content {
+  max-width: 420px;
+}
+
+/* TITULO */
+.presence__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2a44;
+  margin-bottom: 8px;
+}
+
+/* TEXTO NARANJA */
+.presence__highlight {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 35px;
+  line-height: 1.4;
+}
+
+/* =============================================
+   LISTA DE ESTADOS
+   ============================================= */
+.presence__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ITEM */
 .presence__item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   cursor: pointer;
+  transition: all .2s ease;
 }
 
-.dot {
+/* DOT */
+.presence__item .dot {
   width: 10px;
   height: 10px;
   background: var(--orange);
   border-radius: 50%;
   opacity: .4;
+  transition: all .2s ease;
+}
+
+/* CARD */
+.presence__card {
+  background: #eef2f7;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #1f2a44;
+  min-width: 280px;
+  transition: all .2s ease;
+}
+
+/* ACTIVO */
+.presence__item.active {
+  opacity: 1;
 }
 
 .presence__item.active .dot {
@@ -872,259 +972,445 @@ ul { list-style: none; }
   transform: scale(1.3);
 }
 
-.presence__card {
-  background: #eef2f7;
-  padding: 14px 18px;
-  border-radius: 10px;
-}
-
 .presence__item.active .presence__card {
-  background: #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
+/* INACTIVOS */
 .presence__item:not(.active) {
-  opacity: .5;
+  opacity: .55;
 }
 
 /* =============================================
-   GENERA INGRESOS
+   RESPONSIVE
    ============================================= */
-.income {
-  background: var(--gray-50);
-  padding: 80px 0;
+@media (max-width: 900px) {
+  .presence__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .presence__map {
+    margin: 0 auto 40px;
+  }
+
+  .presence__content {
+    margin: 0 auto;
+  }
+
+  .presence__item {
+    justify-content: center;
+  }
 }
 
+/* =============================================
+   INCOME SECTION (FINAL CORREGIDO)
+   ============================================= */
+
+.income {
+  padding: 110px 0;
+  background: linear-gradient(90deg, #f8fafc 60%, #e9eff8 100%);
+}
+
+/* GRID */
 .income__inner {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
+  gap: 90px;
 }
 
+/* =============================================
+   TEXTO
+   ============================================= */
+.income__content {
+  max-width: 520px;
+}
+
+/* TITULO */
+.income__title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1f2a44;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+/* LINEA AZUL */
+.income__title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #5b7bd5;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* DESCRIPCIÓN */
 .income__desc {
-  color: var(--gray-500);
-  font-size: .95rem;
-  margin-bottom: 36px;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 35px;
+  line-height: 1.6;
 }
 
-.income__perks {
+/* =============================================
+   CARDS (CORREGIDAS)
+   ============================================= */
+.income__cards {
+  display: flex;
+  gap: 26px;
+  margin-top: 30px;
+}
+
+/* CARD */
+.income__card {
+  background: #ffffff;
+  padding: 24px 20px;
+  border-radius: 14px;
+
+  width: 185px;
+  height: 120px;
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.income__perk {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  font-weight: 600;
-  font-size: .95rem;
-  color: var(--gray-700);
+
+  text-align: center;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transition: all .25s ease;
 }
 
-.income__perk-icon {
-  width: 52px;
-  height: 52px;
-  background: var(--orange-light);
-  border-radius: var(--radius-md);
+/* HOVER */
+.income__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,.12);
+}
+
+/* ICONO */
+.income__card .icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+
+  background: #f9741600;
+  border-radius: 12px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
+/* TEXTO */
+.income__card p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1f2a44;
+}
+
+/* =============================================
+   IMAGEN (SIN DOBLE BORDE)
+   ============================================= */
 .income__image {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .income__image img {
-  width: 100%;
-  height: 100%;
+  width: 360px;
+  height: 360px;
   object-fit: cover;
+  border-radius: 50%;
+
+  /* solo sombra ligera */
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 900px) {
+  .income__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .income__cards {
+    justify-content: center;
+  }
+
+  .income__image {
+    margin-top: 40px;
+  }
+}
 /* =============================================
    FORM SECTION
    ============================================= */
 .form-section {
-  padding: 80px 0;
-  background: #fff;
+  padding: 100px 0;
+  background: #f5f6f8;
 }
 
-.form-section__inner {
-  max-width: 680px;
+/* 🔥 MISMO CONTENEDOR QUE TODA LA LANDING */
+.form-container {
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
 }
 
-.form-section .section-label,
-.form-section .section-title {
-  text-align: center;
+/* IMAGEN */
+.form-image {
+  display: flex;
+  justify-content: flex-start; /* 🔥 pegada a la izquierda como arriba */
 }
 
-.form-section__sub {
-  font-size: .9rem;
-  color: var(--gray-500);
-  margin-bottom: 40px;
+.form-image img {
+  width: 420px;
+  max-width: 100%;
 }
 
+/* TEXTO */
+.form-content {
+  max-width: 480px;
+}
+
+/* TITULO */
+.form-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 10px 0;
+}
+
+/* LINEA */
+.line {
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 5px;
+  margin: 12px 0 20px;
+}
+
+/* TEXTO */
+.form-content p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+/* GRID INPUTS */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: 15px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* INPUTS */
+.input-group input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f1f5f9;
+  transition: 0.3s;
 }
 
-.form-group label {
-  font-size: .82rem;
-  font-weight: 600;
-  color: var(--gray-700);
-}
-
-.form-group input {
-  padding: 12px 16px;
-  border: 1.5px solid var(--gray-200);
-  border-radius: var(--radius-md);
-  font-family: 'Khula', 'Open Sans', sans-serif;
-  font-size: .9rem;
-  color: var(--gray-900);
-  transition: border-color var(--transition), box-shadow var(--transition);
+.input-group input:focus {
+  border-color: #f97316;
   background: #fff;
-  outline: none;
 }
 
-.form-group input::placeholder { color: var(--gray-400); }
-
-.form-group input:focus {
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(249,115,22,.15);
+/* BOTON */
+.btn-submit {
+  margin-top: 20px;
+  background: #1e293b;
+  color: #fff;
+  border: none;
+  margin-left: 330px; /* ajusta a tu gusto */
+  padding: 12px 35px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.form-submit {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
+.btn-submit:hover {
+  background: #f97316;
 }
 
 /* =============================================
    CONTACT / ATENCIÓN AL CLIENTE
    ============================================= */
-.contact {
-  padding: 80px 0;
-  background: var(--gray-50);
+.contact-section {
+  padding: 100px 0;
+  background: #f5f6f8;
 }
 
-.contact__inner {
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 80px;
 }
 
-.contact__desc {
-  color: var(--gray-500);
-  font-size: .95rem;
-  margin-bottom: 32px;
-  line-height: 1.7;
+/* TEXTO */
+.contact-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
-.contact__list {
+.line {
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 5px;
+  margin: 12px 0 20px;
+}
+
+.contact-content p {
+  color: #64748b;
+  margin-bottom: 30px;
+  max-width: 420px;
+}
+
+/* ITEMS */
+.contact-items {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-.contact__item {
+.contact-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: .93rem;
-  color: var(--gray-700);
+  gap: 15px;
 }
 
-.contact__item a {
-  color: var(--orange);
-  transition: color var(--transition);
-}
-
-.contact__item a:hover { color: var(--orange-dark); }
-
-.contact__icon {
-  width: 40px;
-  height: 40px;
-  background: var(--orange-light);
-  border-radius: 50%;
+/* ICONOS */
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+
+  /* 🔥 sombra como diseño */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-.contact__image {
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  height: 400px;
+.icon-box img {
+  width: 20px;
 }
 
-.contact__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* TEXTO */
+.contact-item span {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.email {
+  color: #f97316;
+}
+
+/* IMAGEN */
+.contact-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-image img {
+  width: 380px;
+  border-radius: 50%;
+}
+
+/* ICONO FLOTANTE */
+.floating-icon {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.floating-icon img {
+  width: 30px;
 }
 
 /* =============================================
    FOOTER
    ============================================= */
 .footer {
-  background: #fff;
-  border-top: 1px solid var(--gray-200);
-  padding: 40px 0 24px;
+  background: #f5f6f8;
 }
 
-.footer__inner {
+/* TOP */
+.footer-top {
+  max-width: 1200px;   /* 🔥 clave */
+  margin: 0 auto;      /* 🔥 centra todo */
+  padding: 60px 20px 40px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer__logo { margin-bottom: 4px; }
-
-.footer__nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-  justify-content: center;
-}
-
-.footer__nav a {
-  font-size: .8rem;
-  color: var(--gray-500);
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  transition: color var(--transition), background var(--transition);
-}
-
-.footer__nav a:hover {
-  color: var(--orange);
-  background: var(--orange-light);
-}
-
-.footer__copy {
-  font-size: .75rem;
-  color: var(--gray-400);
+  align-items: center; /* 🔥 centra logo y menú */
   text-align: center;
+}
+
+/* LOGO */
+.footer-logo img {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+/* NAV */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #f97316;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  background: #1e293b;
+  padding: 15px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #cbd5f5;
+  font-size: 12px;
 }
 
 /* =============================================

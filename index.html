@@ -369,124 +369,188 @@
 </section>
 
   <!-- GENERA INGRESOS -->
-  <section class="income" id="unete">
-    <div class="container income__inner">
-      <div class="income__content">
-        <p class="section-label">Oportunidad</p>
-        <h2 class="section-title">Genera ingresos con nosotros</h2>
-        <p class="income__desc">En Grupo Sefinsa buscamos personas comprometidas que quieran generar ingresos ayudando a otros a obtener un préstamo.</p>
-        <div class="income__perks">
-          <div class="income__perk">
-            <span class="income__perk-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#F97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="#F97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Trabajo desde casa</span>
-          </div>
-          <div class="income__perk">
-            <span class="income__perk-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><line x1="12" y1="1" x2="12" y2="23" stroke="#F97316" stroke-width="1.8" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="#F97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Comisiones atractivas</span>
-          </div>
-          <div class="income__perk">
-            <span class="income__perk-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke="#F97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 6 23 6 23 12" stroke="#F97316" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Bonos mensuales</span>
-          </div>
-        </div>
-      </div>
-      <div class="income__image">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=420&h=480&fit=crop&crop=faces" alt="Mujer usando celular" />
-      </div>
-    </div>
-  </section>
+  <section class="income">
+  <div class="container">
 
-  <!-- FORMULARIO COLOCADORA -->
+    <div class="income__inner">
+
+      <!-- TEXTO -->
+      <div class="income__content">
+
+        <h2 class="income__title">
+          Genera ingresos con nosotros
+        </h2>
+
+        <p class="income__desc">
+          En Grupo Sefinsa buscamos personas comprometidas que quieran generar ingresos ayudando a otros a obtener un préstamo.
+        </p>
+
+        <div class="income__cards">
+
+          <div class="income__card">
+            <div class="icon"><img src="ICONOS/ICONO 11.webp" alt=""></div>
+            <p>Trabajo desde casa</p>
+          </div>
+
+          <div class="income__card">
+            <div class="icon"><img src="ICONOS/ICONO 12.webp" alt=""></div>
+            <p>Comisiones atractivas</p>
+          </div>
+
+          <div class="income__card">
+            <div class="icon"><img src="ICONOS/ICONO 13.webp" alt=""></div>
+            <p>Bonos mensuales</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- IMAGEN -->
+      <div class="income__image">
+        <img src="Img/IMAGEN 5.webp" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
   <section class="form-section">
-    <div class="container form-section__inner">
-      <p class="section-label center">Únete</p>
-      <h2 class="section-title center">Únete a nuestra fuerza de ventas como colocadora</h2>
-      <p class="form-section__sub center">Déjanos tus datos y te contactaremos.</p>
-      <form class="colocadora-form" id="colocadoraForm" novalidate>
+  <div class="form-container">
+
+    <!-- Imagen -->
+    <div class="form-image">
+      <img src="Img/IMAGEN 6.webp" alt="persona">
+    </div>
+
+    <!-- Formulario -->
+    <div class="form-content">
+      <span class="form-tag">ÚNETE</span>
+
+      <h2>
+        Únete a nuestra fuerza<br>
+        de ventas como colocadora
+      </h2>
+
+      <div class="line"></div>
+
+      <p>Déjanos tus datos y te contactaremos.</p>
+
+      <form id="contactForm">
+
         <div class="form-grid">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+          <div class="input-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" placeholder="" required>
           </div>
-          <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
+
+          <div class="input-group">
+            <label>Apellido</label>
+            <input type="text" name="apellido" placeholder="" required>
           </div>
-          <div class="form-group">
-            <label for="poblacion">Población</label>
-            <input type="text" id="poblacion" name="poblacion" placeholder="Población" required />
+
+          <div class="input-group">
+            <label>Población</label>
+            <input type="text" name="poblacion" placeholder="" required>
           </div>
-          <div class="form-group">
-            <label for="telefono">Número de teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required />
+
+          <div class="input-group">
+            <label>Número de teléfono</label>
+            <input type="tel" name="telefono" placeholder="" required>
           </div>
         </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn--primary btn--lg">Enviar</button>
-        </div>
+
+        <button type="submit" class="btn-submit">Enviar</button>
+
+        <p class="form-message" id="formMessage"></p>
       </form>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- ATENCIÓN AL CLIENTE -->
-  <section class="contact" id="atencion">
-    <div class="container contact__inner">
-      <div class="contact__content">
-        <p class="section-label">Contacto</p>
-        <h2 class="section-title">Estamos aquí para ayudarte</h2>
-        <p class="contact__desc">Nuestro equipo está listo para brindarte atención personalizada y resolver tus dudas.</p>
-        <div class="contact__list">
-          <div class="contact__item">
-            <span class="contact__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.88 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.74a16 16 0 006.35 6.35l1.1-1.1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>(871) 000 0000 | (871) 000 0000</span>
-          </div>
-          <div class="contact__item">
-            <span class="contact__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <a href="mailto:info@gruposefinsa.com">info@gruposefinsa.com</a>
-          </div>
-          <div class="contact__item">
-            <span class="contact__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.88 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.77 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.74a16 16 0 006.35 6.35l1.1-1.1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>(871) 000 0000</span>
-          </div>
-        </div>
-      </div>
-      <div class="contact__image">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=420&h=460&fit=crop&crop=faces" alt="Agente de atención al cliente" />
-      </div>
-    </div>
-  </section>
+ <section class="contact-section">
+  <div class="contact-container">
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#" class="navbar__logo footer__logo">
-        <div class="logo-mark">
-          <span class="logo-icon">&#9650;</span>
-          <span class="logo-text">SEFINSA<sup>®</sup></span>
+    <!-- TEXTO -->
+    <div class="contact-content">
+
+      <h2>Estamos aquí para ayudarte</h2>
+      <div class="line"></div>
+
+      <p>
+        Nuestro equipo está listo para brindarte atención personalizada y resolver tus dudas.
+      </p>
+
+      <div class="contact-items">
+
+        <!-- TEL -->
+        <div class="contact-item">
+          <div class="icon-box">
+            <img src="ICONOS/TELEFONO.webp" alt="">
+          </div>
+          <span>(871) 000 0000 | (871) 000 0000</span>
         </div>
-      </a>
-      <nav class="footer__nav">
-        <a href="#quienes-somos">Quiénes somos</a>
-        <a href="#requisitos">Requisitos</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#unete">Únete a nuestro equipo</a>
-        <a href="#atencion">Atención al cliente</a>
-      </nav>
-      <p class="footer__copy">© 2026 SEFINSA. Todos los derechos reservados | Desarrollado por AW Software</p>
+
+        <!-- EMAIL -->
+        <div class="contact-item">
+          <div class="icon-box">
+            <img src="ICONOS/CORREO.webp" alt="">
+          </div>
+          <span class="email">info@gruposefinsa.com</span>
+        </div>
+
+        <!-- WHATS -->
+        <div class="contact-item">
+          <div class="icon-box">
+            <img src="ICONOS/WHATSAPP.webp" alt="">
+          </div>
+          <span>(871) 000 0000</span>
+        </div>
+
+      </div>
     </div>
-  </footer>
+
+    <!-- IMAGEN -->
+    <div class="contact-image">
+      <img src="Img/IMAGEN 7.webp" alt="contacto">
+
+      <!-- ICONO FLOTANTE -->
+      <div class="floating-icon">
+        <img src="ICONOS/ICONO 14.webp" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+
+  <!-- PARTE SUPERIOR -->
+  <div class="footer-top">
+
+    <div class="footer-logo">
+      <img src="LOGOS/LOGO SEFINSA.webp" alt="Sefinsa">
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#">Quiénes somos</a>
+      <a href="#">Requisitos</a>
+      <a href="#">Beneficios</a>
+      <a href="#">Únete a nuestro equipo</a>
+      <a href="#">Atención al cliente</a>
+    </nav>
+
+  </div>
+
+  <!-- PARTE INFERIOR -->
+  <div class="footer-bottom">
+    <p>© 2026 SEFINSA. Todos los derechos reservados | Desarrollado por A W Software</p>
+  </div>
+
+</footer>
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/528710000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
@@ -560,6 +624,46 @@ items.forEach(item => {
     });
 
   });
+});
+</script>
+<script>
+const form = document.getElementById("contactForm");
+const message = document.getElementById("formMessage");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Obtener datos
+  const nombre = form.nombre.value.trim();
+  const apellido = form.apellido.value.trim();
+  const poblacion = form.poblacion.value.trim();
+  const telefono = form.telefono.value.trim();
+
+  // Validación básica
+  if (!nombre || !apellido || !poblacion || !telefono) {
+    message.textContent = "⚠️ Todos los campos son obligatorios";
+    message.style.color = "red";
+    return;
+  }
+
+  if (!/^[0-9]{10}$/.test(telefono)) {
+    message.textContent = "⚠️ El teléfono debe tener 10 dígitos";
+    message.style.color = "red";
+    return;
+  }
+
+  // Simulación envío
+  console.log({
+    nombre,
+    apellido,
+    poblacion,
+    telefono
+  });
+
+  message.textContent = "✅ Enviado correctamente";
+  message.style.color = "green";
+
+  form.reset();
 });
 </script>
 </body>
