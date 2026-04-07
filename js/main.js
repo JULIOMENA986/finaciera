@@ -77,38 +77,63 @@ function initPresence() {
 // FORMULARIO
 // ===============================
 function initForm() {
-  const form = document.getElementById("contactForm");
+  console.log("initForm cargado");
+  const form    = document.getElementById("contactForm");
+  console.log("form encontrado:", form);
   const message = document.getElementById("formMessage");
-
+  
+ 
   if (!form) return;
-
-  form.addEventListener("submit", function(e) {
+ 
+  form.addEventListener("submit", function (e) {
+    console.log("submit disparado");
     e.preventDefault();
-
-    const nombre = form.nombre.value.trim();
-    const apellido = form.apellido.value.trim();
+ 
+    const nombre    = form.nombre.value.trim();
+    const apellido  = form.apellido.value.trim();
     const poblacion = form.poblacion.value.trim();
-    const telefono = form.telefono.value.trim();
-
+    const telefono  = form.telefono.value.trim();
+ 
+    // Validaciones
     if (!nombre || !apellido || !poblacion || !telefono) {
       message.textContent = "⚠️ Todos los campos son obligatorios";
       message.style.color = "red";
       return;
     }
-
+ 
     if (!/^[0-9]{10}$/.test(telefono)) {
       message.textContent = "⚠️ El teléfono debe tener 10 dígitos";
       message.style.color = "red";
       return;
     }
-
-    // Simulación envío
-    console.log({ nombre, apellido, poblacion, telefono });
-
-    message.textContent = "✅ Enviado correctamente";
-    message.style.color = "green";
-
-    form.reset();
+ 
+    // Estado de carga
+    const btn       = form.querySelector(".btn-submit");
+    btn.disabled    = true;
+    btn.textContent = "Enviando...";
+    message.textContent = "";
+ 
+    // Envío real al servidor
+    console.log("enviando a:", "Mail/mail.php");
+    fetch("Mail/mail.php", {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then(res => res.json())
+      .then(data => {
+        message.textContent = data.ok ? "✅ " + data.msg : "⚠️ " + data.msg;
+        message.style.color = data.ok ? "green" : "red";
+        if (data.ok) form.reset();
+      })
+      .catch((err) => {
+        console.log("Error en fetch:", err);
+        message.textContent = "⚠️ Error de conexión. Intenta de nuevo.";
+        message.style.color = "red";
+      })
+      .finally(() => {
+        btn.disabled    = false;
+        btn.textContent = "Enviar";
+      });
   });
 }
 
