@@ -468,8 +468,11 @@ ul { list-style: none; }
 
 /* NAVBAR BASE */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
 
   background: rgba(247, 247, 247, 0.95);
@@ -2227,8 +2230,8 @@ ul { list-style: none; }
     padding: 12px 16px; 
     font-size: .95rem;
     border-radius: 8px;
-       font-family: 'Khula', 'Open Sans', sans-serif;
-  font-weight: 400;
+    font-family: 'Khula', 'Open Sans', sans-serif;
+    font-weight: 400;
   }
   
   .navbar__nav a:hover {
@@ -2239,7 +2242,11 @@ ul { list-style: none; }
     display: none;
   }
   
-  .navbar { position: relative; }
+  /* .navbar { position: relative; } */
+
+  body {
+    padding-top: 70px; /* Ajusta según la altura de tu navbar */
+  }
   
   /* Hero */
   .hero { 
@@ -3253,6 +3260,7 @@ ul { list-style: none; }
   body {
     font-size: 12pt;
     line-height: 1.5;
+    padding-top: 90px;
   }
   
   .hero,
